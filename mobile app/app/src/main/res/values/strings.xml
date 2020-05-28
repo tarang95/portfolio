@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Inventory</string>
+    <string name="Send">Send</string>
+    <string name="Save">Save</string>
+
+    <string name="Profile">Profile</string>
+    <string name="sendData">OK</string>
+    <string name="cancelData">Cancel</string>
+    <string name="popUp">Are you sure?This will delete all entries. </string>
+    <string name="backPress">Save entries to db first</string>
+</resources>

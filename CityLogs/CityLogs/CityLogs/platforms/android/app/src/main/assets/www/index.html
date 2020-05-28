@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>CityLogs</title>
+	<script type="text/javascript" src="cordova.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/city.js"></script>
+	<style>
+		.ui-footer {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Home page -->
+	<div id="page_home" data-role="page">
+		<div data-role="header">
+			<h1>City Logs</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+			<ul id="listview_city_logs" data-role="listview">
+			</ul>
+		</div>
+		<div data-role="footer" class="ui-content">
+			CQUniversity, R. Balsys. 2018.
+		</div>
+	</div>
+	<!-- Log page -->
+	<div id="page_log" data-role="page">
+		<div data-role="header">
+			<button class="ui-btn ui-icon-delete ui-btn-icon-left" onclick="clearLogEntryForm()">Clear</button>
+			<h1 id="page_log_title"></h1>
+			<button class="ui-btn ui-icon-eye ui-btn-icon-left" onclick="showLogEntriesPage()">Show Logs</button>
+		</div>
+		<div data-role="main" class="ui-content">
+			<div class="ui-bar ui-bar-a">
+				<div id="log_time"></div>
+				<button id="button_log_time" class="ui-btn" onclick="logTime()">
+					Time
+				</button>
+			</div>
+			<div class="ui-bar ui-bar-a">
+				<p>Contact:</p>
+				<p>
+					<input id="your_contact" type="text" placeholder="Your contact details" />
+				</p>
+			</div>
+			<div class="ui-bar ui-bar-a">
+				<p>Invoice #</p>
+				<p>
+					<input id="your_invoice" type="text" placeholder="012345678" />
+				</p>
+			</div>
+			<div class="ui-bar ui-bar-a">
+				<select id="select_your_destination">
+					<option value="Perth">Perth</option>
+					<option value="Brisbane">Brisbane</option>
+					<option value="Sydney">Sydney</option>
+					<option value="Melbourne">Melbourne</option>
+					<option value="Adelaide">Adelaide</option>
+				</select>
+				<button class="ui-btn" onclick="saveLogEntry()">
+					Save log entry
+				</button>
+			</div>
+		</div>
+		<div data-role="footer" class="ui-content">
+			<button class="ui-btn ui-icon-arrow-r ui-btn-icon-left" onclick="showNextCityLogPage()">
+				Next
+			</button>
+			<button class="ui-btn ui-icon-arrow-l ui-btn-icon-left" onclick="showPreviousCityLogPage()">
+				Previous
+			</button>
+			<a href="#page_home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+		</div>
+	</div>
+
+	<!-- Log entries page -->
+	<div id="page_log_entries" data-role="page">
+		<div data-role="header">
+			<button onclick="onGetCloudLogs()" class="ui-btn ui-icon-carat-d ui-btn-icon-left">get...</button>
+			<h1 id="page_log_entries_title">Car</h1>
+			<button onclick="sendLogEntries()" class="ui-btn ui-icon-check ui-btn-icon-left">Send...</button>
+		</div>
+		<div data-role="main" class="ui-content">
+			<h1>Current log entries:</h1>
+			<table data-role="table" id="table-custom-1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
+				<thead>
+					<tr class="ui-bar-d">
+						<th data-priority="1">City </th>
+						<th data-priority="2">Time</th>
+						<th data-priority="3">Lattitude</th>
+						<th data-priority="4">Longitude</th>
+						<th data-priority="5">Contact</th>
+						<th data-priority="6">Invoice</th>
+						<th data-priority="6">Destination</th>
+					</tr>
+				</thead>
+				<tbody id="log_entries">
+				</tbody>
+			</table>
+		</div>
+		<div data-role="footer" class="ui-content">
+			<a href="#" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+		</div>
+	</div>
+
+	<!-- Log entries page -->
+	<div id="page_cloud_city_logs" data-role="page">
+		<div data-role="header">
+			<a href="#" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+			<h1 id="page_log_entries_title">Cloud city logs</h1>
+			<a href="#page_home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+		</div>
+		<div data-role="main" class="ui-content">
+			<h1>Cloud city log entries:</h1>
+
+			<table data-role="table" id="table-custom-2" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
+				<thead>
+					<tr class="ui-bar-d">
+						<th data-priority="1">City </th>
+						<th data-priority="2">Time</th>
+						<th data-priority="3">Lattitude</th>
+						<th data-priority="4">Longitude</th>
+						<th data-priority="5">Contact</th>
+						<th data-priority="6">Invoice</th>
+						<th data-priority="6">Destination</th>
+					</tr>
+				</thead>
+				<tbody id="cloud_log_list">
+
+				</tbody>
+			</table>
+
+		</div>
+		<div data-role="footer" class="ui-content">
+			<a href="#" data-rel="back" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+		</div>
+	</div>
+</body>
+
+</html>

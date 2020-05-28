@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fgData"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:orientation="vertical"
+    tools:context=".dataEntry_fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/tvInventory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="40dp"
+        android:text="Inventory Item"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tvInvoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Invoice#"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/etInvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="130dp"
+            android:ems="10"
+            android:hint="Invoice number"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/btAddItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="ADD ITEM" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvQuality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quality"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/spQuality"
+            android:layout_width="150dp"
+            android:layout_height="28dp"
+            android:dropDownWidth="match_parent" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btShowItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="SHOW ITEMS" />
+
+</LinearLayout>

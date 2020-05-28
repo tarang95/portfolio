@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="CowLogs.js"></script>
+	
+	
+</head>
+<body>
+	<!-- Home page -->
+	<div id="page_home" data-role="page">
+		<div data-role="header">
+			<h1>Cow Logs</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+			<ul id="listview_cow_logs" data-role="listview">
+			</ul>
+		</div>
+		<div data-role="footer" class="ui-content">
+			CQUniversity, R. Balsys. 2018.
+		</div>
+		
+	</div>
+	
+	<!-- Log page -->
+	<div id="page_log" data-role="page">
+		<div data-role="header">
+			<button class="ui-btn" onClick="clearLogEntryForm()">Clear</button>
+			<h1 id="page_log_title"></h1>
+			<button class="ui-btn" onClick="showLogEntriesPage()">Show Logs</button>
+		</div>
+		<div data-role="main" class="ui-content">
+		
+			<div class="ui-bar ui-bar-a">
+				<p>ID:</p>
+				<p><input id="input_id" type="text" placeholder="XXXX" /></p>
+			</div>
+			<div class="ui-bar ui-bar-a">
+				<p>Weight:(kg)</p>
+				<p><input id="input_weight" type="number" placeholder="0,->10000" /></p>
+			</div>
+			<div class="ui-bar ui-bar-a">
+				<p>Age(whole weeks)</p>
+				<p><input id="input_age" type="number" placeholder="0,->200" /></p>
+			</div>
+			
+			<div class="ui-bar ui-bar-a">
+				<select id="select_condition">
+					<option value="">Condition</option>
+					<option value="Poor">Poor</option>
+					<option value="Average">Average</option>
+					<option value="Good">Good</option>
+					<option value="Excellent">Excellent</option>
+					
+				</select>
+				<div id="log_time"></div>
+				<button 
+					class="ui-btn"
+					onclick="saveLogEntry()">
+					Save log entry
+				</button>
+			</div>
+		</div>
+		<div data-role="footer" class="ui-content">
+			<button 
+				class="ui-btn ui-icon-arrow-r ui-btn-icon-left" 
+				onclick="showNextcowLogPage()">
+				Next
+			</button>
+			<button 
+				class="ui-btn ui-icon-arrow-l ui-btn-icon-left"
+				onclick="showPreviouscowLogPage()">
+				Previous
+			</button>
+			<a href="#page_home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+		</div>
+	</div>
+
+	<!-- Log entries page -->
+	<div id="page_log_entries" data-role="page">
+		<div data-role="header">
+			<a href="#" data-rel="back" class="ui-btn">Back</a>
+			<h1 id="page_log_entries_title">Car</h1>
+			<button onClick="sendLogEntries()" class="ui-btn ui-icon-home ui-btn-icon-left">Send...</button>
+		</div>
+		<div data-role="main" class="ui-content">
+			<h1>Current log entries:</h1>
+			<button onclick="getLocation()">Try It</button>
+			<p id="demo"></p>
+			<p>
+				ID, Time, Weight, Age, Condition
+			</p>
+			<p id="log_entries"></p>
+		</div>
+		<div data-role="footer" class="ui-content">
+			<a href="#page_home" class="ui-btn ui-icon-delete ui-btn-icon-left">Home</a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "citylogsweb",
+  "version": "1.0.0",
+  "description": "application fo  a data logger to capture package location data in a mobile application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express",
+    "RestAPI",
+    "MongoDB",
+    "Mongoose",
+    "CityLogs"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.0"
+  }
+}

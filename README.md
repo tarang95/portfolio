@@ -5,5 +5,5 @@
 5. Various mobile and web applications
 
 some screenshots:
-[New Microsoft Word Document.pdf](https://github.com/tarang95/portfolio/files/7126027/New.Microsoft.Word.Document.pdf)
+![New Microsoft Word Document](https://user-images.githubusercontent.com/19798152/132450344-0db4446d-13ba-42a0-b789-479d5ee05ff0.jpg)
 
